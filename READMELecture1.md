@@ -552,28 +552,33 @@ console.log(element.classList.length); // Количество классов
 Пример работы с classList
 
 <div id="example" class="box"></div>
-<script>
+
   const element = document.getElementById("example");
-
-  // Добавление класса
+```
+   Добавление класса
+   ```javascript
   element.classList.add("highlight");
-
-  // Проверка наличия класса
+ ```
+   Проверка наличия класса
+   ```javascript
   if (element.classList.contains("highlight")) {
     console.log("Класс 'highlight' присутствует");
   }
-
-  // Удаление класса
+```
+  Удаление класса
+  ```javascript
   element.classList.remove("box");
-
-  // Переключение класса
+```
+  Переключение класса
+  ```javascript
   element.classList.toggle("active");
-
-  // Замена класса
+```
+  Замена класса
+  ```javascript
   element.classList.replace("highlight", "focused");
 
   console.log(element.classList); // Вывод всех классов элемента
-</script>
-
+ 
+```
 Свойство classList упрощает манипуляции с классами элементов и делает код более читаемым и лаконичным.
-
+ 
