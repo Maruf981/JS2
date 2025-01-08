@@ -492,4 +492,88 @@ if (element) {
     element.remove();
 }
 ```
+
 Метод createElement широко используется для динамического создания интерфейсов и манипуляции DOM.
+
+
+# DOM Properties: classList
+
+Свойство classList предоставляет удобный интерфейс для работы с классами элемента. Оно позволяет добавлять, удалять, переключать и проверять наличие классов у элементов.
+
+#### Основные методы classList
+
+1. `add`
+
+Добавляет один или несколько классов к элементу.
+```javascript
+const element = document.querySelector(".my-element");
+element.classList.add("new-class", "another-class");
+```
+2. `remove`
+
+Удаляет один или несколько классов у элемента.
+```javascript
+const element = document.querySelector(".my-element");
+element.classList.remove("old-class");
+```
+3. `toggle`
+
+Добавляет класс, если его нет, и удаляет, если он уже есть.
+```javascript
+const element = document.querySelector(".my-element");
+element.classList.toggle("active"); // Если "active" есть, удалит, иначе добавит.
+```
+Можно передать второй аргумент для явного добавления или удаления:
+```javascript
+element.classList.toggle("active", true); // Явно добавляет класс "active".
+element.classList.toggle("active", false); // Явно удаляет класс "active".
+```
+4. `contains`
+
+Проверяет, есть ли у элемента указанный класс.
+```javascript
+const element = document.querySelector(".my-element");
+console.log(element.classList.contains("visible")); // true или false
+```
+5. `replace`
+
+Заменяет один класс на другой.
+```javascript
+const element = document.querySelector(".my-element");
+element.classList.replace("old-class", "new-class");
+```
+### Свойство length
+
+Возвращает количество классов у элемента.
+```javascript
+const element = document.querySelector(".my-element");
+console.log(element.classList.length); // Количество классов
+```
+Пример работы с classList
+
+<div id="example" class="box"></div>
+<script>
+  const element = document.getElementById("example");
+
+  // Добавление класса
+  element.classList.add("highlight");
+
+  // Проверка наличия класса
+  if (element.classList.contains("highlight")) {
+    console.log("Класс 'highlight' присутствует");
+  }
+
+  // Удаление класса
+  element.classList.remove("box");
+
+  // Переключение класса
+  element.classList.toggle("active");
+
+  // Замена класса
+  element.classList.replace("highlight", "focused");
+
+  console.log(element.classList); // Вывод всех классов элемента
+</script>
+
+Свойство classList упрощает манипуляции с классами элементов и делает код более читаемым и лаконичным.
+
